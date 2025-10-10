@@ -1,0 +1,37 @@
+{
+    "platform": "databricks",
+    "data_types": {
+        "varchar": "string",
+        "text": "string",
+        "integer": "int",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "boolean"
+    },
+    "functions": {
+        "current_date": "current_timestamp()",
+        "string_agg": "collect_list",
+        "concat": "concat",
+        "substr": "substring"
+    },
+    "features": {
+        "delta_lake": true,
+        "unity_catalog": true,
+        "auto_optimize": true,
+        "z_order": true
+    },
+    "limitations": [
+        "No materialized views",
+        "Limited stored procedure support",
+        "No user-defined types"
+    ],
+    "optimization": {
+        "file_formats": ["delta", "parquet", "orc"],
+        "compression": ["snappy", "gzip", "none"],
+        "clustering": {
+            "supported": true,
+            "max_columns": 4
+        }
+    }
+}

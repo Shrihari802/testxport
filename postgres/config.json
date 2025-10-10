@@ -1,0 +1,40 @@
+{
+    "platform": "postgres",
+    "data_types": {
+        "varchar": "varchar",
+        "text": "text",
+        "integer": "integer",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "boolean"
+    },
+    "functions": {
+        "current_date": "now()",
+        "string_agg": "string_agg",
+        "concat": "||",
+        "substr": "substring"
+    },
+    "features": {
+        "inheritance": true,
+        "extensions": true,
+        "custom_types": true,
+        "partitioning": true
+    },
+    "limitations": [
+        "Table size limit depends on filesystem",
+        "Column limit of 250-1600 depending on type",
+        "Limited parallel query support in some operations"
+    ],
+    "optimization": {
+        "index_types": ["btree", "hash", "gist", "gin"],
+        "partitioning": {
+            "supported": true,
+            "types": ["range", "list", "hash"]
+        },
+        "vacuum": {
+            "supported": true,
+            "automatic": true
+        }
+    }
+}

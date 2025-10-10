@@ -1,0 +1,41 @@
+{
+    "platform": "sqlserver",
+    "data_types": {
+        "varchar": "varchar",
+        "text": "text",
+        "integer": "int",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "datetime2",
+        "boolean": "bit"
+    },
+    "functions": {
+        "current_date": "getdate()",
+        "string_agg": "string_agg",
+        "concat": "+",
+        "substr": "substring"
+    },
+    "features": {
+        "temporal_tables": true,
+        "columnstore": true,
+        "memory_optimized": true,
+        "always_encrypted": true
+    },
+    "limitations": [
+        "Limited JSON support",
+        "No native UUID comparison",
+        "Maximum 1024 columns per table"
+    ],
+    "optimization": {
+        "index_types": ["rowstore", "columnstore", "memory_optimized"],
+        "partitioning": {
+            "supported": true,
+            "types": ["range", "list", "hash"]
+        },
+        "compression": {
+            "row": true,
+            "page": true,
+            "columnstore": true
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "platform": "mysql",
+    "data_types": {
+        "varchar": "varchar",
+        "text": "text",
+        "integer": "int",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "tinyint(1)"
+    },
+    "functions": {
+        "current_date": "now()",
+        "string_agg": "group_concat",
+        "concat": "concat",
+        "substr": "substring"
+    },
+    "features": {
+        "storage_engines": true,
+        "triggers": true,
+        "events": true,
+        "partitioning": true
+    },
+    "limitations": [
+        "No full-text search on InnoDB tables",
+        "Limited JSON support",
+        "No native UUID type"
+    ],
+    "optimization": {
+        "storage_engines": ["InnoDB", "MyISAM", "Memory"],
+        "index_types": ["btree", "hash"],
+        "partitioning": {
+            "supported": true,
+            "types": ["range", "list", "hash", "key"]
+        }
+    }
+}

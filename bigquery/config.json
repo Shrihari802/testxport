@@ -1,0 +1,40 @@
+{
+    "platform": "bigquery",
+    "data_types": {
+        "varchar": "string",
+        "text": "string",
+        "integer": "int64",
+        "decimal": "numeric",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "bool"
+    },
+    "functions": {
+        "current_date": "current_timestamp()",
+        "string_agg": "string_agg",
+        "concat": "concat",
+        "substr": "substr"
+    },
+    "features": {
+        "partitioning": true,
+        "clustering": true,
+        "ml_integration": true,
+        "geospatial": true
+    },
+    "limitations": [
+        "No stored procedures (use UDFs)",
+        "Limited transaction support",
+        "No indexes"
+    ],
+    "optimization": {
+        "partition_types": ["time", "integer_range", "ingestion_time"],
+        "clustering": {
+            "supported": true,
+            "max_columns": 4
+        },
+        "query_acceleration": {
+            "bi_engine": true,
+            "materialized_views": true
+        }
+    }
+}

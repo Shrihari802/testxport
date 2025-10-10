@@ -1,0 +1,40 @@
+{
+    "platform": "snowflake",
+    "data_types": {
+        "varchar": "varchar",
+        "text": "text",
+        "integer": "integer",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "boolean"
+    },
+    "functions": {
+        "current_date": "current_timestamp()",
+        "string_agg": "listagg",
+        "concat": "concat",
+        "substr": "substring"
+    },
+    "features": {
+        "time_travel": true,
+        "zero_copy_cloning": true,
+        "semi_structured": true,
+        "dynamic_tables": true
+    },
+    "limitations": [
+        "Limited recursive CTE support",
+        "No user-defined aggregates",
+        "Maximum varchar length varies by edition"
+    ],
+    "optimization": {
+        "warehouse_sizes": ["X-Small", "Small", "Medium", "Large", "X-Large"],
+        "clustering": {
+            "supported": true,
+            "automatic": true
+        },
+        "caching": {
+            "result_cache": true,
+            "warehouse_cache": true
+        }
+    }
+}

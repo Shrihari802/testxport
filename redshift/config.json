@@ -1,0 +1,34 @@
+{
+    "platform": "redshift",
+    "data_types": {
+        "varchar": "varchar",
+        "text": "text",
+        "integer": "integer",
+        "decimal": "decimal",
+        "date": "date",
+        "timestamp": "timestamp",
+        "boolean": "boolean"
+    },
+    "functions": {
+        "current_date": "GETDATE()",
+        "string_agg": "LISTAGG",
+        "concat": "||",
+        "substr": "SUBSTRING"
+    },
+    "features": {
+        "dist_key": true,
+        "sort_key": true,
+        "vacuum": true,
+        "analyze": true
+    },
+    "limitations": [
+        "Limited JSON support",
+        "No arrays or nested types",
+        "Maximum varchar length of 65535"
+    ],
+    "optimization": {
+        "dist_styles": ["even", "key", "all"],
+        "sort_styles": ["compound", "interleaved"],
+        "compression": ["raw", "gz"]
+    }
+}
